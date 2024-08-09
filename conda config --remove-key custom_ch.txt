@@ -1,0 +1,11 @@
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate
+conda config --remove-key custom_channels
+conda config --remove-key default_channels
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+conda create -n tf_env python=3.5.2
+conda activate tf_env
+pip install tensorflow==0.12.1
+conda install conda-forge::cudatoolkit
+conda install marta-sd::cudnn
